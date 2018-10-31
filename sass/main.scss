@@ -1,0 +1,107 @@
+$bg-color: #F3767C;
+$dark-grey: #39383D;
+$light-grey: #58595B;
+$display-color: #A2AF77;
+$btn-color: #F15A2B;
+$white: #ECF6FD;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: $bg-color;
+}
+
+.title {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.calculator {
+    width: 470px;
+    height: 520px;
+    margin: 0 auto;
+    background-color: $dark-grey;
+    padding: 30px 15px 30px 15px;
+    border-radius: 10px;
+
+    &__display {
+        width: 100%;
+        height: 70px;
+        margin: 20px auto 20px auto;
+        background-color: $display-color;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+    }
+
+    &__pad {
+        width: 100%;
+        height: 355px;
+        background-color: #333;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 8px;
+
+        &-ac { grid-row: 1 / 1; grid-column: 1 / 4;}
+        &-divide { grid-row: 1 / 2; grid-column: 4 / 5;}
+        &-multiply { grid-row: 2 / 3; grid-column: 4 / 5;}
+        &-subtract { grid-row: 3 / 4; grid-column: 4 / 5;}
+        &-add { grid-row: 4 / 5; grid-column: 4 / 5;}
+        &-equal { grid-row: 5 / 6; grid-column: 4 / 5; background-color: $btn-color; }
+        &-decimal { grid-row: 5 / 6; grid-column: 3 / 4;}
+
+        &-zero { grid-row: 5 / 6; grid-column: 1 / 3;}
+        &-one { grid-row: 4 / 5; grid-column: 1 / 2;}
+        &-two { grid-row: 4 / 5; grid-column: 2 / 3;}
+        &-three { grid-row: 4 / 5; grid-column: 3 / 4;}
+        &-four { grid-row: 3 / 4; grid-column: 1 / 2;}
+        &-five { grid-row: 3 / 4; grid-column: 2 / 3;}
+        &-six { grid-row: 3 / 4; grid-column: 3 / 4;}
+        &-seven { grid-row: 2 / 3; grid-column: 1 / 2;}
+        &-eight { grid-row: 2 / 3; grid-column: 2 / 3;}
+        &-nine { grid-row: 2 / 3; grid-column: 3 / 4;}
+
+
+    }
+
+    &__pad * {
+        background-color: $light-grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px;
+        border-radius: 5px;
+        color: $white;
+        box-shadow: 3px 4px 4px rgba(0, 0, 0, .2);
+        transition: all .1s;
+        cursor: pointer;
+    }
+
+    &__pad-equal { background-color: $btn-color; }
+
+    .pressed {
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+        background-color: #3d3d3d;
+        transform: translateY(2px);
+    }
+
+    &__pad *:active {
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+        background-color: #3d3d3d;
+        transform: translateY(2px);
+    }
+
+    &__pad *:hover {
+        color: #c2c2c2d8;
+    }
+}
